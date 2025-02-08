@@ -1,0 +1,42 @@
+[workspace]
+resolver = "2"
+members = [
+  "rustty",
+]
+default-members = []
+
+[profile.release]
+codegen-units = 1 # Best LLVM optimization
+panic = "abort" # Remove unwind code on release
+opt-level = 3
+lto = true
+strip = true
+
+[workspace.package]
+license = "GPL-3.0-or-later"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.81"
+authors = [
+  "Max Rodriguez <me@maxrdz.com>"
+]
+repository = "https://gitlab.com/rustty/rustty"
+
+[workspace.metadata.cross.build]
+default-target = "aarch64-unknown-linux-gnu"
+
+[workspace.metadata.cross.target.aarch64-unknown-linux-gnu]
+image.name = "ubuntu:24.04"
+image.toolchain = ["aarch64-unknown-linux-gnu"]
+pre-build = [
+    "apt-get update",
+    "apt-get install --assume-yes git llvm clang pkg-config gcc g++",
+    "dpkg --force-all -i *.deb",
+]
+
+[workspace.dependencies]
+
+[workspace.dependencies.i18n-embed]
+version = "0.15"
+features = ["fluent-system", "desktop-requester"]
+
