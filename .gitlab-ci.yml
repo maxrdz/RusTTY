@@ -4,7 +4,9 @@ include:
 
 variables:
   ORGANIZATION_NAME: "maxrdz"
-  PROJECT_NAME: "rustty"
+  MIRROR_ORGANIZATION_NAME: "rustty"
+  PROJECT_NAME: "shell/rustty"
+  MIRROR_PROJECT_NAME: "rustty"
   MIRROR_HOST: "github.com"
   TYPOS_UPSTREAM: "https://github.com/crate-ci/typos/releases/download/v1.22.7/typos-v1.22.7-x86_64-unknown-linux-musl.tar.gz"
   GCP_PROJECT_NUMBER: 155457831646
@@ -59,8 +61,8 @@ sync-mirror:
     - ssh-keyscan ${MIRROR_HOST} >> ~/.ssh/known_hosts
     # Clone repository and push to mirror remote
     - git clone --mirror https://gitlab.com/${ORGANIZATION_NAME}/${PROJECT_NAME}.git/
-    - cd ${PROJECT_NAME}.git
-    - ssh-agent sh -c 'ssh-add ~/.ssh/privatekey; git push -v --mirror git@github.com:${ORGANIZATION_NAME}/${PROJECT_NAME}'
+    - cd *.git
+    - ssh-agent sh -c 'ssh-add ~/.ssh/privatekey; git push -v --mirror git@github.com:${MIRROR_ORGANIZATION_NAME}/${MIRROR_PROJECT_NAME}'
 
 commit-validation:
   image: 'python:3.12-alpine'
