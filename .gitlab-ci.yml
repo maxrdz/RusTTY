@@ -3,7 +3,7 @@ include:
   - template: Security/Secret-Detection.gitlab-ci.yml
 
 variables:
-  ORGANIZATION_NAME: "rustty"
+  ORGANIZATION_NAME: "maxrdz"
   PROJECT_NAME: "rustty"
   MIRROR_HOST: "github.com"
   TYPOS_UPSTREAM: "https://github.com/crate-ci/typos/releases/download/v1.22.7/typos-v1.22.7-x86_64-unknown-linux-musl.tar.gz"
