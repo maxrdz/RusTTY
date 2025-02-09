@@ -7,7 +7,7 @@
 ### Getting the source
 
 ```sh
-git clone https://gitlab.com/rustty/rustty.git
+git clone https://source.rustty.org/shell/rustty.git
 cd rustty/
 ```
 
@@ -50,9 +50,9 @@ meson compile -C build
 
 ## Copyright and Software License
 
-Copyright (c) 2025 Max Rodriguez <me@maxrdz.com> 
+Copyright (c) 2025 Max Rodriguez <me@maxrdz.com>
 
-"RusTTY" can be found at https://gitlab.com/rustty/rustty
+"RusTTY" can be found at https://source.rustty.org/shell/rustty
 
 "RusTTY" is distributed under the terms of the GNU General Public
 License, either version 3.0 or, at your option, any later
