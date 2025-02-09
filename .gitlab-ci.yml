@@ -3,8 +3,8 @@ include:
   - template: Security/Secret-Detection.gitlab-ci.yml
 
 variables:
-  ORGANIZATION_NAME: "maxrdz"
-  MIRROR_ORGANIZATION_NAME: "rustty"
+  ORGANIZATION_NAME: "rustty"
+  MIRROR_ORGANIZATION_NAME: "maxrdz"
   PROJECT_NAME: "shell/rustty"
   MIRROR_PROJECT_NAME: "rustty"
   MIRROR_HOST: "github.com"
